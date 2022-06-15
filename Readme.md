@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Alexey Artemevskih](https://up.htmlacademy.ru/javascript/26/user/581221).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Карпов](https://htmlacademy.ru/profile/id518893).
 
 ---
 
