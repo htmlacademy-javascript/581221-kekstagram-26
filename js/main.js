@@ -77,7 +77,7 @@ const createPhotoDescription = () => {
       message: createMessage(),
       name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)]
     }
-  }
+  };
 };
 
 const photosDescriptions = Array.from({length: PHOTOS_COUNT}, createPhotoDescription);
