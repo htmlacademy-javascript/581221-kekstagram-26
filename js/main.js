@@ -1,4 +1,3 @@
-const MIN_ID = 1;
 const PHOTOS_COUNT = 25;
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
@@ -48,34 +47,32 @@ function getRandomPositiveInteger (a, b) {
   // И в конце с помощью метода Math.floor мы округляем полученный результат,
   // потому что Math.random() генерирует только дробные числа и ноль.
   return Math.floor(result);
-};
-
-function checkStringLength (string, length) {
-  return string.length <= length;
-};
+}
 
 const createMessage = () => {
-  let i = getRandomPositiveInteger(0, MESSAGES.length - 1);
-  let j = getRandomPositiveInteger(0, MESSAGES.length - 1);
-  let result = [];
-  result.push(MESSAGES[i]);
-  (i != j && getRandomPositiveInteger(0, 1)) ? result.push(MESSAGES[j]) : false;
+  const a = getRandomPositiveInteger(0, MESSAGES.length - 1);
+  const b = getRandomPositiveInteger(0, MESSAGES.length - 1);
+  const result = [];
+  result.push(MESSAGES[a]);
+  (a !== b && getRandomPositiveInteger(0, 1)) {
+    result.push(MESSAGES[b]);
+  }
 
   return result;
 };
 
-let i = 0;
+let photoID = 0;
 
 const createPhotoDescription = () => {
-  i++;
+  photoID++;
   return {
-    id: i,
-    url: `photos/` + i + `.jpg`,
+    id: photoID,
+    url: `photos/${  photoID  }.jpg`,
     description: DESCRIPTIONS[getRandomPositiveInteger(0, DESCRIPTIONS.length - 1)],
     likes: getRandomPositiveInteger(MIN_LIKES, MAX_LIKES),
     comments: {
       id: getRandomPositiveInteger(1, 1000),
-      avatar: 'img/avatar-' + getRandomPositiveInteger(1, AVATARS_COUNT) + '.svg',
+      avatar: `img/avatar-${  getRandomPositiveInteger(1, AVATARS_COUNT)  }.svg`,
       message: createMessage(),
       name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)]
     }
@@ -83,4 +80,5 @@ const createPhotoDescription = () => {
 };
 
 const photosDescriptions = Array.from({length: PHOTOS_COUNT}, createPhotoDescription);
+// eslint-disable-next-line no-console
 console.log(photosDescriptions);
