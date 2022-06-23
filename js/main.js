@@ -53,6 +53,7 @@ const createMessage = () => {
   const a = getRandomPositiveInteger(0, MESSAGES.length - 1);
   const b = getRandomPositiveInteger(0, MESSAGES.length - 1);
   const result = [];
+
   result.push(MESSAGES[a]);
   if (a !== b && getRandomPositiveInteger(0, 1)) {
     result.push(MESSAGES[b]);
